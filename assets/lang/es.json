@@ -1,0 +1,62 @@
+{
+  "pickLocation": "Elegir ubicación",
+  "selectedLocationAddress": "ubicación seleccionada",
+  "selectedLocationCoords": "Coordenadas de ubicación seleccionadas",
+  "latitude": "Latitud",
+  "longitude": "Longitud",
+  "currentLocationAddress": "Dirección de ubicación actual",
+  "currentLocationCoords": "Coordenadas de ubicación actual",
+  "markAttendance": "Marcar asistencia",
+  "selectedLocation": "Ubicación seleccionada",
+  "startTime":"Hora de inicio",
+  "endTime":"Tiempo del fin",
+  "homeTab":"Inicio >",
+  "historyTab":"Historia",
+  "settingsTab":"Configuración",
+ "home":{
+    "selectLocation":"Por favor, seleccione su ubicación primero.",
+    "oopsCheckIn":"- ¡Eso es todo! Sólo puedes registrarte entre las 5:30 y las 6:30 de la mañana.",
+    "oopsCheckOut":"- ¡Eso es todo! Sólo puedes salir de las 14:30 a las 15:30.",
+    "checkinSuccess":"¡Se ha registrado con éxito!",
+    "checkoutSuccess":"¡Se ha salido con éxito!",
+    "alreadtCheckOut":"Ya te has ido hoy.",
+    "selectLocationToCheckout":"Por favor, seleccione una ubicación antes de salir.",
+    "checkOutSecond":"¡Se ha salido con éxito! No se encontró ningún registro de registro, así que se creó uno nuevo.",
+    "checkOutError":"Algo salió mal mientras nos registramos.",
+    "checkIn":"Registro de entrada",
+    "checkOut":"- ¿ Qué ?",
+    "alreadyCheckedIn":"Ya has hecho el check-in para hoy."
+
+  },
+  "location":{
+    "search":"Búsqueda",
+    "currentLocation":"Ubicación actual",
+    "confirmLocation":"Confirmar la ubicación"
+  },
+  "history":{
+    "title":"Historial de asistencia",
+    "noData":"No se encontraron registros de asistencia.",
+    "checkIn":"Tiempo de entrada",
+    "checkOut":"Tiempo de salida",
+    "selectedLocation":"Ubicación seleccionada",
+     "currentLocationWhileCheckingIn":"Ubicación actual (Registro)",
+    "currentLocationWhileCheckingOut":"Ubicación actual (comprobar)"
+  },
+  "detail":{
+    "date":"Fecha",
+    "day":"Diario"
+  },
+  "settings":{
+    "title":"Configuración",
+    "profile":"Perfiles",
+    "language":"Lenguaje",
+    "logout":"Salir de la cuenta"
+  },
+   "login":{
+    "login":"Inicio de sesión",
+    "username":"Nombre de usuario",
+    "enterYourUsername":"Ingrese su nombre de usuario",
+    "password":"Contraseña",
+    "enterYourPassword":"Ingrese su contraseña."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "pickLocation": "Pick Location",
+  "selectedLocationAddress": "Selected Location",
+  "selectedLocationCoords": "Selected Location Coords",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "currentLocationAddress": "Current Location Address",
+  "currentLocationCoords": "Current Location Coords",
+  "markAttendance": "Mark Attendance",
+  "selectedLocation": "Selected Location",
+  "startTime":"Start Time",
+  "endTime":"End Time",
+  "homeTab":"Home",
+  "historyTab":"History",
+  "settingsTab":"Settings",
+  "home":{
+    "selectLocation":"Please select your location first.",
+    "oopsCheckIn":"Oops! You can only Check-In from 5:30 AM to 6:30 AM.",
+    "oopsCheckOut":"Oops! You can only Check-Out from 2:30 PM to 3:30 PM.",
+    "checkinSuccess":"Checked in successfully!",
+    "checkoutSuccess":"Checked out successfully!",
+    "alreadtCheckOut":"You have already checked out today.",
+    "selectLocationToCheckout":"Please select a location before checking out.",
+    "checkOutSecond":"Checked out successfully! No check-in record was found so a new one was created.",
+    "checkOutError":"Something went wrong while checking out.",
+    "checkIn":"Check In",
+    "checkOut":"Check Out",
+    "alreadyCheckedIn":"You have already checked-in for today."
+  },
+  "location":{
+    "search":"Search",
+    "currentLocation":"Current location",
+    "confirmLocation":"Confirm Location"
+  },
+  "history":{
+    "title":"Attendance History",
+    "noData":"No attendance records found.",
+    "checkIn":"CheckIn Time",
+    "checkOut":"CheckOut Time",
+    "selectedLocation":"Selected Location",
+    "currentLocationWhileCheckingIn":"Current Location (Check In)",
+    "currentLocationWhileCheckingOut":"Current Location (Check Out)"
+  },
+  "detail":{
+    "date":"Date",
+    "day":"Day"
+  },
+  "settings":{
+    "title":"Settings",
+    "profile":"Profile",
+    "language":"Language",
+    "logout":"Log Out"
+  },
+  "login":{
+    "login":"Login",
+    "username":"Username",
+    "enterYourUsername":"Enter your username",
+    "password":"Password",
+    "enterYourPassword":"Enter your password"
+  }
+}

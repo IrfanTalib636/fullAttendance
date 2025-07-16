@@ -1,0 +1,62 @@
+{
+  "pickLocation": "Localização selecionada",
+  "selectedLocationAddress": "Localização selecionada",
+  "selectedLocationCoords": "Coordenadas de localização selecionadas",
+  "latitude": "Latitude :",
+  "longitude": "Longitude :",
+  "currentLocationAddress": "Endereço da localização atual",
+  "currentLocationCoords": "Coordenadas de localização atuais",
+  "markAttendance": "Marcar presença",
+  "selectedLocation": "Localização selecionada",
+  "startTime":"Hora de início",
+  "endTime":"Fim dos tempos",
+  "homeTab":"Página inicial",
+  "historyTab":"História",
+  "settingsTab":"Definições",
+  "home":{
+    "selectLocation":"Por favor, selecione a sua localização primeiro.",
+    "oopsCheckIn":"Ups! Só pode entrar das 5:30 às 6:30 da manhã.",
+    "oopsCheckOut":"Ups! Só pode sair das 14h30 às 15h30.",
+    "checkinSuccess":"Registaram-se com sucesso!",
+    "checkoutSuccess":"Saí com sucesso!",
+    "alreadtCheckOut":"Você já saiu hoje.",
+    "selectLocationToCheckout":"Por favor, selecione um local antes de sair.",
+    "checkOutSecond":"Saí com sucesso! Não foi encontrado nenhum registo de check-in, por isso foi criado um novo.",
+    "checkOutError":"Alguma coisa correu mal enquanto estava a sair.",
+    "checkIn":"Chegar .",
+    "checkOut":"Checar .",
+    "alreadyCheckedIn":"Já fez o check-in para hoje."
+
+  },
+  "location":{
+    "search":"Pesquisa",
+    "currentLocation":"Localização actual",
+    "confirmLocation":"Confirmar localização"
+  },
+  "history":{
+    "title":"Histórico de presença",
+    "noData":"Não há registos de presença.",
+    "checkIn":"Hora de Chegada",
+    "checkOut":"Horário de saída",
+    "selectedLocation":"Localização selecionada",
+   "currentLocationWhileCheckingIn":"Localização atual (Check In)",
+    "currentLocationWhileCheckingOut":"Localização actual (Check Out)"
+  },
+  "detail":{
+    "date":"Data",
+    "day":"Da"
+  },
+ "settings":{
+    "title":"Definições",
+    "profile":"Perfil",
+    "language":"Língua",
+    "logout":"Desligar"
+  },
+   "login":{
+    "login":"Login",
+    "username":"Nome do utilizador",
+    "enterYourUsername":"Insira o seu nome de utilizador",
+    "password":"Senha",
+    "enterYourPassword":"Digite a sua palavra-passe"
+  }
+}
