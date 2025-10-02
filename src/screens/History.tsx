@@ -20,7 +20,7 @@ import {useNavigation} from '@react-navigation/native';
 import MonthPicker from 'react-native-month-year-picker';
 import {useResponsiveDimensions} from '../hooks';
 import {AnyIcon, IconType} from '../components';
-import {convertUtcToLocalTime, formattedDate} from '../utils';
+import {formattedDate} from '../utils';
 import {
   auth,
   collection,
@@ -305,7 +305,7 @@ useEffect(() => {
                           <Text style={styles.detailText}>
                             {checkInTime === null
                               ? '---'
-                              : convertUtcToLocalTime(checkInTime, '12')}
+                              : checkInTime}
                           </Text>
                         </View>
                         <View
@@ -319,7 +319,7 @@ useEffect(() => {
                           <Text style={styles.detailText}>
                             {checkOutTime === null
                               ? '---'
-                              : convertUtcToLocalTime(checkOutTime, '12')}
+                              : checkOutTime}
                           </Text>
                         </View>
                       </View>

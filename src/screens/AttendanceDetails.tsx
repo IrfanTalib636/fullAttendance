@@ -5,7 +5,7 @@ import {COLORS, TEXT_STYLE} from '../enums';
 import {AnyIcon, BackButton, IconType, Map} from '../components';
 import {useRoute} from '@react-navigation/native';
 import {AppDataContext} from '../context/AppDataContext';
-import {convertUtcToLocalTime, formattedDate} from '../utils';
+import {formattedDate} from '../utils';
 
 export const AttendanceDetails = () => {
   const {appLang} = useContext(AppDataContext);
@@ -195,7 +195,7 @@ export const AttendanceDetails = () => {
             <Text>
               {data?.checkInTime === null
                 ? '---'
-                : convertUtcToLocalTime(data?.checkInTime, '12')}
+                : data?.checkInTime}
             </Text>
           </View>
           <View
@@ -217,7 +217,7 @@ export const AttendanceDetails = () => {
             <Text>
               {data?.checkOutTime === null
                 ? '---'
-                : convertUtcToLocalTime(data?.checkOutTime, '12')}
+                : data?.checkOutTime}
             </Text>
           </View>
         </ScrollView>

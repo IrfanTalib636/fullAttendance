@@ -13,10 +13,10 @@ import {getAuth, signOut} from '@react-native-firebase/auth';
 import {
   checkInAttendanceTime,
   checkOutAttendanceTime,
-  convertToUTC,
   getCheckStatus,
   getDistanceInMiles,
   resetAndGo,
+  getLocalTime
 } from '../utils';
 import {SCREENS, STACK} from '../enums';
 import moment from 'moment';
@@ -192,7 +192,7 @@ const handleCheckIn = async (
     await setDoc(docRef, {
       userId: userId,
       date: moment(now.toDateString(), 'ddd MMM DD YYYY').format('YYYY-MM-DD'),
-      checkInTime: convertToUTC(now),
+      checkInTime: getLocalTime(),
       checkOutTime: null,
       currentLocationCoordsWhileCheckingIn: {
         latitude: locationcoords.latitude,
@@ -307,7 +307,7 @@ const handleCheckout = async (
 
     const querySnapshot = await getDocs(q);
     // const now = new Date();
-    const checkOutTime = convertToUTC(now);
+    const checkOutTime = getLocalTime();
 
     const selectedLat = await AsyncStorage.getItem('latitude');
     const selectedLon = await AsyncStorage.getItem('longitude');

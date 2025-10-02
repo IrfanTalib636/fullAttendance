@@ -15,8 +15,8 @@
   "settingsTab":"Settings",
   "home":{
     "selectLocation":"Please select your location first.",
-    "oopsCheckIn":"Oops! You can only Check-In from 5:30 AM to 6:30 AM.",
-    "oopsCheckOut":"Oops! You can only Check-Out from 2:30 PM to 3:30 PM.",
+    "oopsCheckIn":"Oops! You can only Check-In from 5:30 AM to 7:30 AM.",
+    "oopsCheckOut":"Oops! You can only Check-Out from 2:30 PM to 4:30 PM.",
     "checkinSuccess":"Checked in successfully!",
     "checkoutSuccess":"Checked out successfully!",
     "alreadtCheckOut":"You have already checked out today.",
