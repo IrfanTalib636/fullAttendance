@@ -15,8 +15,8 @@
   "settingsTab":"Definições",
   "home":{
     "selectLocation":"Por favor, selecione a sua localização primeiro.",
-    "oopsCheckIn":"Ups! Só pode entrar das 5:30 às 6:30 da manhã.",
-    "oopsCheckOut":"Ups! Só pode sair das 14h30 às 15h30.",
+    "oopsCheckIn":"Ups! Só pode entrar das 5:30 às 7:30 da manhã.",
+    "oopsCheckOut":"Ups! Só pode sair das 14h30 às 16h30.",
     "checkinSuccess":"Registaram-se com sucesso!",
     "checkoutSuccess":"Saí com sucesso!",
     "alreadtCheckOut":"Você já saiu hoje.",

@@ -96,10 +96,10 @@ function getCheckStatus() {
   const totalMinutes = now.getHours() * 60 + now.getMinutes();
 
   // Define time ranges in minutes
-  const checkInStart = 15 * 60 + 31; // 3:31 PM -> 931 minutes
-  const checkInEnd = 6 * 60 + 30;    // 6:30 AM -> 390 minutes
-  const checkOutStart = 6 * 60 + 31; // 6:31 AM -> 391 minutes
-  const checkOutEnd = 15 * 60 + 30;  // 3:30 PM -> 930 minutes
+  const checkInStart = 16 * 60 + 31; // 4:31 PM -> 991 minutes
+  const checkInEnd = 7 * 60 + 30;    // 7:30 AM -> 450 minutes
+  const checkOutStart = 7 * 60 + 31; // 7:31 AM -> 451 minutes
+  const checkOutEnd = 16 * 60 + 30;  // 4:30 PM -> 990 
 
   if (totalMinutes >= checkInStart || totalMinutes <= checkInEnd) {
     return "Check In";
@@ -108,6 +108,17 @@ function getCheckStatus() {
   } else {
     return "Invalid Time";
   }
+}
+
+ // Get local time without any UTC conversion
+ function getLocalTime(): string {
+  const now = new Date(); // current local time
+  // Format it in local timezone with AM/PM format
+  return now.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  });
 }
 
 const formattedDate=(rawDate:any)=>{
@@ -157,8 +168,8 @@ function getDistanceInMiles(lat1 : any, lon1 : any, lat2 : any, lon2 : any) {
     return R * c;
   }
 
-  function convertToUTC(now:any) {
-    // const now = new Date(); // current local time
+  function convertToUTC(): string {
+    const now = new Date(); // current local time
     // Format it to UTC in AM/PM format
     return now.toLocaleTimeString('en-US', {
       hour: 'numeric',
@@ -198,8 +209,8 @@ function getDistanceInMiles(lat1 : any, lon1 : any, lat2 : any, lon2 : any) {
   const checkInAttendanceTime = () => {
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
-    const startAllowed = 5 * 60 + 30;
-    const endAllowed = 6 * 60 + 30;
+    const startAllowed = 5 * 60 + 30; // 5:30 AM
+    const endAllowed = 7 * 60 + 30;   // 7:30 AM 
     if (currentMinutes < startAllowed || currentMinutes > endAllowed) {
       return false;
     }
@@ -209,7 +220,7 @@ function getDistanceInMiles(lat1 : any, lon1 : any, lat2 : any, lon2 : any) {
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
     const startAllowed = 14 * 60 + 30; // 2:30 PM => 14:30
-    const endAllowed = 15 * 60 + 30;   // 3:30 PM => 15:30
+    const endAllowed = 16 * 60 + 30;   // 3:30 PM => 15:30
     if (currentMinutes < startAllowed || currentMinutes > endAllowed) {
       return false;
     }
@@ -226,9 +237,8 @@ export {
   formattedDate,
   getLocation,
   getDistanceInMiles,
-  convertToUTC,
-  convertUtcToLocalTime,
   checkInAttendanceTime,
   checkOutAttendanceTime,
-  language
+  language,
+  getLocalTime
 };

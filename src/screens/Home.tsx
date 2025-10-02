@@ -23,7 +23,7 @@ import {
 import {COLORS, SCREENS, TEXT_STYLE} from '../enums';
 import {useResponsiveDimensions, useToast} from '../hooks';
 import MapView from 'react-native-maps';
-import {convertUtcToLocalTime, getCheckStatus, getLocation} from '../utils';
+import {getCheckStatus, getLocation} from '../utils';
 import {AnyIcon, IconType, Map} from '../components';
 import {RouteProp} from '@react-navigation/native';
 import {AppDataContext} from '../context/AppDataContext';
@@ -111,7 +111,7 @@ export const Home = () => {
         setStartTime(
           docData?.checkInTime === null
             ? ''
-            : convertUtcToLocalTime(docData?.checkInTime, '12'),
+            : docData?.checkInTime,
         );
         setEndTime(docData?.checkOutTime === null ? '' : docData?.checkOutTime);
         setAddress(
@@ -290,7 +290,7 @@ export const Home = () => {
                   fontSize: hp(14),
                   marginTop: hp(5),
                 }}>
-                {endTime === '' ? '---' : convertUtcToLocalTime(endTime, '12')}
+                {endTime === '' ? '---' : endTime}
               </Text>
             </View>
           </View>
@@ -319,7 +319,8 @@ export const Home = () => {
                     selectedLocation,
                     address,
                   )
-          }>
+          }
+          >
           {loading ? (
             <ActivityIndicator color={COLORS.WHITE} />
           ) : (

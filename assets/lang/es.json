@@ -15,8 +15,8 @@
   "settingsTab":"Configuración",
  "home":{
     "selectLocation":"Por favor, seleccione su ubicación primero.",
-    "oopsCheckIn":"- ¡Eso es todo! Sólo puedes registrarte entre las 5:30 y las 6:30 de la mañana.",
-    "oopsCheckOut":"- ¡Eso es todo! Sólo puedes salir de las 14:30 a las 15:30.",
+    "oopsCheckIn":"- ¡Eso es todo! Sólo puedes registrarte entre las 5:30 y las 7:30 de la mañana.",
+    "oopsCheckOut":"- ¡Eso es todo! Sólo puedes salir de las 14:30 a las 16:30.",
     "checkinSuccess":"¡Se ha registrado con éxito!",
     "checkoutSuccess":"¡Se ha salido con éxito!",
     "alreadtCheckOut":"Ya te has ido hoy.",
