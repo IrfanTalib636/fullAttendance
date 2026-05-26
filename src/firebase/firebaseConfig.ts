@@ -15,10 +15,8 @@ import {
   checkOutAttendanceTime,
   getCheckStatus,
   getDistanceInMiles,
-  resetAndGo,
   getLocalTime
 } from '../utils';
-import {SCREENS, STACK} from '../enums';
 import moment from 'moment';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -30,11 +28,10 @@ type LoginHandlerParams = {
   username: string;
   password: string;
   showToast: (msg: string, type: 'successToast' | 'errorToast') => void;
-  navigation: any;
 };
 
 
-const loginWithUsername = async (navigation:LoginHandlerParams['navigation'],username:LoginHandlerParams['username'], password:LoginHandlerParams['password'],showToast:LoginHandlerParams['showToast'],setLoading: LoginHandlerParams['setLoading']) => {
+const loginWithUsername = async (username:LoginHandlerParams['username'], password:LoginHandlerParams['password'],showToast:LoginHandlerParams['showToast'],setLoading: LoginHandlerParams['setLoading']) => {
   console.log("USERNAME===>",username);
   try {
     setLoading(true);
@@ -49,7 +46,6 @@ const loginWithUsername = async (navigation:LoginHandlerParams['navigation'],use
     await auth.signInWithEmailAndPassword(result?.email, password);
     setLoading(false);
     showToast('Logged In Successfully', 'successToast');
-    resetAndGo(navigation,STACK.BOTTOM_NAV,null)
   } catch (error: any) {
     if (error.message.includes('invalid-credential')) {
       setLoading(false);

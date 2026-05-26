@@ -92,6 +92,15 @@ export const Home = () => {
     longitude: 0,
   });
 
+  // Re-render when crossing noon or midnight so the button label updates
+  const [, setTimeTick] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => setTimeTick(t => t + 1), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const attendanceAction = getCheckStatus();
+
   useEffect(() => {
     // 1. Get current location
     getLocation(setLocationCoords, handleSetCurrentLocationName);
@@ -298,7 +307,7 @@ export const Home = () => {
         <TouchableOpacity
           style={styles.btnContainer}
           onPress={
-            getCheckStatus() === 'Check In'
+            attendanceAction === 'Check In'
               ? () =>
                   handleCheckIn(
                     setLoading,
@@ -325,7 +334,7 @@ export const Home = () => {
             <ActivityIndicator color={COLORS.WHITE} />
           ) : (
             <Text style={styles.btnText}>
-              {getCheckStatus() === 'Check In'
+              {attendanceAction === 'Check In'
                 ? appLang.home.checkIn
                 : appLang.home.checkOut}
             </Text>

@@ -11,13 +11,11 @@ import {
 import React, {useContext, useMemo, useState} from 'react';
 import {useResponsiveDimensions, useToast} from '../hooks';
 import {COLORS, TEXT_STYLE} from '../enums';
-import {useNavigation} from '@react-navigation/native';
 import { loginWithUsername } from '../firebase/firebaseConfig';
 import { AppDataContext } from '../context/AppDataContext';
 
 export const Login = () => {
   const {appLang}=useContext(AppDataContext);
-  const navigation = useNavigation<any>();
   const showToast = useToast();
   const {hp, wp} = useResponsiveDimensions();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -133,7 +131,7 @@ export const Login = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.btnContainer} onPress={()=>loginWithUsername(navigation,email,password,showToast,setLoading)}>
+        <TouchableOpacity style={styles.btnContainer} onPress={()=>loginWithUsername(email,password,showToast,setLoading)}>
           {loading ? (
             <ActivityIndicator color={COLORS.WHITE}/>
           ):(

@@ -89,25 +89,15 @@ const hasLocationPermission = async () => {
   }
 };
 
-function getCheckStatus() {
+const NOON_MINUTES = 12 * 60; // 12:00 PM — switch between check-in and check-out
+
+const getMinutesSinceMidnight = () => {
   const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+};
 
-  // Get the total minutes since midnight
-  const totalMinutes = now.getHours() * 60 + now.getMinutes();
-
-  // Define time ranges in minutes
-  const checkInStart = 16 * 60 + 31; // 4:31 PM -> 991 minutes
-  const checkInEnd = 7 * 60 + 30;    // 7:30 AM -> 450 minutes
-  const checkOutStart = 7 * 60 + 31; // 7:31 AM -> 451 minutes
-  const checkOutEnd = 16 * 60 + 30;  // 4:30 PM -> 990 
-
-  if (totalMinutes >= checkInStart || totalMinutes <= checkInEnd) {
-    return "Check In";
-  } else if (totalMinutes >= checkOutStart && totalMinutes <= checkOutEnd) {
-    return "Check Out";
-  } else {
-    return "Invalid Time";
-  }
+function getCheckStatus() {
+  return getMinutesSinceMidnight() < NOON_MINUTES ? 'Check In' : 'Check Out';
 }
 
  // Get local time without any UTC conversion
@@ -206,25 +196,14 @@ function getDistanceInMiles(lat1 : any, lon1 : any, lat2 : any, lon2 : any) {
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`;
   }
 
+  // Check-in: 12:00 AM – 11:59 AM (before noon)
   const checkInAttendanceTime = () => {
-    const now = new Date();
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
-    const startAllowed = 5 * 60 + 30; // 5:30 AM
-    const endAllowed = 7 * 60 + 30;   // 7:30 AM 
-    if (currentMinutes < startAllowed || currentMinutes > endAllowed) {
-      return false;
-    }
-    return true;
+    return getMinutesSinceMidnight() < NOON_MINUTES;
   };
+
+  // Check-out: 12:00 PM – 11:59 PM (noon and after)
   const checkOutAttendanceTime = () => {
-    const now = new Date();
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
-    const startAllowed = 14 * 60 + 30; // 2:30 PM => 14:30
-    const endAllowed = 16 * 60 + 30;   // 3:30 PM => 15:30
-    if (currentMinutes < startAllowed || currentMinutes > endAllowed) {
-      return false;
-    }
-    return true;
+    return getMinutesSinceMidnight() >= NOON_MINUTES;
   };
   
 export {
